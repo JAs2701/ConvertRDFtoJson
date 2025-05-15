@@ -23,8 +23,8 @@ if __name__ == "__main__":
 		print(arg.input)
 		for (root,dirs,files) in os.walk(arg.input):
 			print (root)
-		        print (dirs)
-		        print (files)
+			print (dirs)
+			print (files)
 		list_of_files = glob.glob("**/*.rdf",root_dir=arg.input,recursive=True)
 		print(list_of_files)
 
