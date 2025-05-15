@@ -1,6 +1,7 @@
 import argparse
 import glob
 import os
+from pathlib import Path
 #from src.rdfToJson import convertRDFtoJson
 #from src.jsonToJsonld import asJLd
 
@@ -20,12 +21,15 @@ if __name__ == "__main__":
 	if 'READ' in arg.generate:
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
-		print(arg.input)
-		for (root,dirs,files) in os.walk(arg.input):
+		inputDirectory = Path(inputResource).absolute()
+		print(f"Directory Parent: {inputDirectory}")
+		
+		for (root,dirs,files) in os.walk(inputDirectory):
 			print (root)
 			print (dirs)
 			print (files)
-		list_of_files = glob.glob("**/*.rdf",root_dir=arg.input,recursive=True)
+		print("Directory Global")
+		list_of_files = glob.glob("**/*.rdf",root_dir=inputDirectory,recursive=True)
 		print(list_of_files)
 
 	if 'FRAME' in arg.generate:
