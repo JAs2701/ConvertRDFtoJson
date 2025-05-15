@@ -19,14 +19,8 @@ if __name__ == "__main__":
 	arg = parser.parse_args()
 	# Generate resources
 	if 'READ' in arg.generate:
-
 		read = convertRDFtoJson(arg.input,arg.output,arg.context)
-		read.convert_data_json()
-		
-		#list_of_files = glob.glob("**/*.rdf",root_dir=dir_GITHUB_WORKSPACE,recursive=True)
-		#print(list_of_files)
-		
+		read.convert_data_json()		
 	if 'FRAME' in arg.generate:
-		# Create a Json-LD Frame
-		#asJLd(arg.input,arg.frame,arg.output).frame()
-		print(arg.input)
+		#Create a Json-LD Frame
+		asJLd(arg.input,arg.frame,arg.output).frame()
