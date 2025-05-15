@@ -4,17 +4,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Get all resources
-      - uses: actions/checkout@v3
-        with:
-          repository: ArchivesNationalesFR/Referentiels
-          path: Referentiels
-          ref: version_2
-
-      - name: Lire les fichiers
-        run: |
-          pwd Referentiels
-          ls -l ${GITHUB_WORKSPACE}/Referentiels
       
       # Python
       - uses: actions/checkout@v4
@@ -26,8 +15,19 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Python Process
-        env: 
-          GaranceRepo: "/home/runner/work/demo_python/demo_python/Referentiels"
-        run: |
-          python convertToJson.py --generate READ --input $GaranceRepo --output garance_python.json
+
+      
+      # Get all resources
+      - uses: actions/checkout@v3
+        with:
+          repository: ArchivesNationalesFR/Referentiels
+          path: Referentiels
+          ref: version_2
+          run: |
+            python convertToJson.py --generate READ --input Referentiels --output garance_python.json
+      
+      #- name: Python Process
+      #  env: 
+      #    GaranceRepo: "/home/runner/work/demo_python/demo_python/Referentiels"
+      #  run: |
+      #    python convertToJson.py --generate READ --input $GaranceRepo --output garance_python.json
