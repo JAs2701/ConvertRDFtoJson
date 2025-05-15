@@ -19,6 +19,8 @@ if __name__ == "__main__":
 	arg = parser.parse_args()
 	# Generate resources
 	if 'READ' in arg.generate:
+		pathNew = os.environ["GITHUB_ACTION_PATH"]
+		print(pathNew)
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
 		inputDirectory = Path(arg.input).absolute()
@@ -29,7 +31,7 @@ if __name__ == "__main__":
 			print (dirs)
 			print (files)
 		print("Directory Global")
-		list_of_files = glob.glob("**/*.rdf",root_dir=os.environ[f"Referentiel"],recursive=True)
+		list_of_files = glob.glob("**/*.rdf",root_dir=inputDirectory,recursive=True)
 		print(list_of_files)
 
 	if 'FRAME' in arg.generate:
