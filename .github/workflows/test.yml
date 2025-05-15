@@ -14,7 +14,7 @@ jobs:
       - name: Lire les fichiers
         run: |
           pwd Referentiels
-          ls -l /home/runner/work/garance/garance/Referentiels
+          ls -l ${GITHUB_WORKSPACE}/Referentiels
       
       # Python
       - uses: actions/checkout@v4
