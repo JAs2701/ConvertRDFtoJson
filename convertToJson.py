@@ -20,6 +20,9 @@ if __name__ == "__main__":
 	# Generate resources
 	if 'READ' in arg.generate:
 
+		for key, value in os.environ.items():
+			print('{}: {}'.format(key, value))
+
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
 		inputDirectory = Path(arg.input).absolute()
