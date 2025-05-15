@@ -1,4 +1,5 @@
 import argparse
+import glob
 #from src.rdfToJson import convertRDFtoJson
 #from src.jsonToJsonld import asJLd
 
@@ -18,7 +19,8 @@ if __name__ == "__main__":
 	if 'READ' in arg.generate:
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
-		print(arg.input)
+		list_of_files = glob.glob("**/*.rdf",root_dir=arg.input,recursive=True)
+		print(list_of_files)
 
 	if 'FRAME' in arg.generate:
 		# Create a Json-LD Frame
