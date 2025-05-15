@@ -13,6 +13,7 @@ jobs:
 
       - name: Lire les fichiers
         run: |
+          pwd Referentiels
           ls -l ${GITHUB_WORKSPACE}/Referentiels
       
       # Python
