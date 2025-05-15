@@ -30,7 +30,7 @@ if __name__ == "__main__":
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
 		
-		for (root,dirs,files) in os.walk(os.environ.get("GaranceRepo")):
+		for (root,dirs,files) in os.walk(os.environ.get("GITHUB_REF")):
 			print (root)
 			print (dirs)
 			print (files)
