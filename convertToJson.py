@@ -25,12 +25,10 @@ if __name__ == "__main__":
 		#	print('{}: {}'.format(key, value))
 
 		print(f"Directory Principal {os.environ["GITHUB_WORKSPACE"]}")
-		dir_GITHUB_WORKSPACE = os.environ["GITHUB_WORKSPACE"] = "/home/runner/work/demo_python/demo_python/Referentiels"
+		dir_GITHUB_WORKSPACE = os.environ["GaranceRepo"]
 		print(f"Directory Principal complet {dir_GITHUB_WORKSPACE}")
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
-		inputDirectory = Path(arg.input).absolute()
-		#print(f"Directory Parent: {inputDirectory}")
 		
 		for (root,dirs,files) in os.walk(dir_GITHUB_WORKSPACE):
 			print (root)
