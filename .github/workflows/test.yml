@@ -23,8 +23,9 @@ jobs:
           repository: ArchivesNationalesFR/Referentiels
           path: Referentiels
           ref: version_2
-          run: |
-            python convertToJson.py --generate READ --input Referentiels --output garance_python.json
+        
+      - run: |
+          python convertToJson.py --generate READ --input Referentiels --output garance_python.json
       
       #- name: Python Process
       #  env: 
