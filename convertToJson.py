@@ -39,6 +39,16 @@ if __name__ == "__main__":
 		list_of_files = glob.glob("**/*.rdf",root_dir=dirTmp,recursive=True)
 		print(list_of_files)
 
+		dirRef = os.environ["GaranceRepo"]
+		print(f"Directory Resource {dirRef}")
+		for (root,dirs,files) in os.walk(dirRef):
+			print (root)
+			print (dirs)
+			print (files)
+
+
+		
+
 	if 'FRAME' in arg.generate:
 		# Create a Json-LD Frame
 		#asJLd(arg.input,arg.frame,arg.output).frame()
