@@ -21,24 +21,24 @@ if __name__ == "__main__":
 	if 'READ' in arg.generate:
 
 		# All token in the repo
-		for key, value in os.environ.items():
-			print('{}: {}'.format(key, value))
+		#for key, value in os.environ.items():
+		#	print('{}: {}'.format(key, value))
 
-		print(f"Directory Principal {os.environ["GITHUB_WORKSPACE"]}")
-		dir_GITHUB_WORKSPACE = os.environ["GaranceRepo"]
-		print(f"Directory Principal complet {dir_GITHUB_WORKSPACE}")
+		#print(f"Directory Principal {os.environ["GITHUB_WORKSPACE"]}")
+		#dir_GITHUB_WORKSPACE = os.environ["GaranceRepo"]
+		#print(f"Directory Principal complet {dir_GITHUB_WORKSPACE}")
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
 		
 		print("Directory Global")
-		for (root,dirs,files) in os.walk(os.environ.get("GaranceRepo")):
+		for (root,dirs,files) in os.walk(arg.input):
 			print (root)
 			print (dirs)
 			print (files)
 		
 		
-		list_of_files = glob.glob("**/*.rdf",root_dir=dir_GITHUB_WORKSPACE,recursive=True)
-		print(list_of_files)
+		#list_of_files = glob.glob("**/*.rdf",root_dir=dir_GITHUB_WORKSPACE,recursive=True)
+		#print(list_of_files)
 		
 	if 'FRAME' in arg.generate:
 		# Create a Json-LD Frame
