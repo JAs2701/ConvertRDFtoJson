@@ -38,7 +38,7 @@ if __name__ == "__main__":
 			print (files)
 		print("Directory Global")
 		
-		list_of_files = glob.glob("**/*.rdf",root_dir=dirReferentiel,recursive=True)
+		list_of_files = glob.glob("**/*.rdf",root_dir=dir_GITHUB_WORKSPACE,recursive=True)
 		print(list_of_files)
 		
 	if 'FRAME' in arg.generate:
