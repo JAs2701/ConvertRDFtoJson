@@ -34,9 +34,6 @@ def localResources(input) -> str:
 
 # Graph RDFLib
 def toJson(inputResource:str,outputFile:str,context:str):
-
-    print(f"Directory: {Path(inputResource).absolute()}")
-    print(f"Directory?: {os.path.isdir(inputResource)}")
     # Input type resource
     #typeResource,r= localResources(Path(inputResource).absolute())
 
@@ -56,7 +53,6 @@ def toJson(inputResource:str,outputFile:str,context:str):
         iFiles = os.path.join(inputResource,f)
         r.append(iFiles)
 
-    print(f"List files: {r}")
     loadGraph = np.vectorize(asJRdfLib.load,otypes=[list])(r)
     for g in loadGraph:
         graph += g
