@@ -24,24 +24,19 @@ if __name__ == "__main__":
 			print('{}: {}'.format(key, value))
 
 		print(f"Directory Principal {os.environ["GITHUB_WORKSPACE"]}")
+		dirTmp = os.environ["GITHUB_WORKSPACE"]
 
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
 		inputDirectory = Path(arg.input).absolute()
-		print(f"Directory Parent: {inputDirectory}")
-
-		get = os.getenv("GITHUB_ACTION_PATH")
-		print(f"Directory with get env: {get}")
-		#pathNew = os.environ["GITHUB_ACTOR"]
-		pathNew = os.environ["GITHUB_ACTOR"]
-		print(pathNew)
+		#print(f"Directory Parent: {inputDirectory}")
 		
-		for (root,dirs,files) in os.walk(inputDirectory):
+		for (root,dirs,files) in os.walk(dirTmp):
 			print (root)
 			print (dirs)
 			print (files)
 		print("Directory Global")
-		list_of_files = glob.glob("**/*.rdf",root_dir=inputDirectory,recursive=True)
+		list_of_files = glob.glob("**/*.rdf",root_dir=dirTmp,recursive=True)
 		print(list_of_files)
 
 	if 'FRAME' in arg.generate:
