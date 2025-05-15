@@ -21,7 +21,7 @@ if __name__ == "__main__":
 	if 'READ' in arg.generate:
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
-		inputDirectory = Path(inputResource).absolute()
+		inputDirectory = Path(arg.input).absolute()
 		print(f"Directory Parent: {inputDirectory}")
 		
 		for (root,dirs,files) in os.walk(inputDirectory):
