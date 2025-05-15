@@ -23,6 +23,8 @@ if __name__ == "__main__":
 		for key, value in os.environ.items():
 			print('{}: {}'.format(key, value))
 
+		print(f"Directory Principal {os.environ["GITHUB_WORKSPACE"]}")
+
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
 		inputDirectory = Path(arg.input).absolute()
