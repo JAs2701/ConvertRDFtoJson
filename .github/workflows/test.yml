@@ -27,6 +27,6 @@ jobs:
           pip install -r requirements.txt
       - name: Python Process
         env: 
-          GaranceRepo: ${GITHUB_WORKSPACE}/Referentiels
+          GaranceRepo: Referentiels
         run: |
           python convertToJson.py --generate READ --input $GaranceRepo --output garance_python.json
