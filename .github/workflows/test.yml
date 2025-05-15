@@ -13,7 +13,6 @@ jobs:
 
       - name: Lire les fichiers
         run: |
-          pwd Referentiels
           ls -l ${GITHUB_WORKSPACE}/Referentiels
       
       # Python
@@ -27,5 +26,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Python Process
+        env: 
+          GaranceRepo: ${GITHUB_WORKSPACE}/Referentiels
         run: |
-          python convertToJson.py --generate READ --input ${GITHUB_WORKSPACE}/Referentiels --output garance_python.json
+          python convertToJson.py --generate READ --input $GaranceRepo --output garance_python.json
