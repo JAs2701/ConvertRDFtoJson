@@ -1,6 +1,6 @@
 import argparse
-from src.rdfToJson import convertRDFtoJson
-from src.jsonToJsonld import asJLd
+#from src.rdfToJson import convertRDFtoJson
+#from src.jsonToJsonld import asJLd
 
 if __name__ == "__main__":
 	
@@ -16,9 +16,11 @@ if __name__ == "__main__":
 	arg = parser.parse_args()
 	# Generate resources
 	if 'READ' in arg.generate:
-		read = convertRDFtoJson(arg.input,arg.output,arg.context)
-		read.convert_data_json()
+		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
+		#read.convert_data_json()
+		print(arg.input)
 
 	if 'FRAME' in arg.generate:
 		# Create a Json-LD Frame
-		asJLd(arg.input,arg.frame,arg.output).frame()
+		#asJLd(arg.input,arg.frame,arg.output).frame()
+		print(arg.input)
