@@ -20,35 +20,28 @@ if __name__ == "__main__":
 	# Generate resources
 	if 'READ' in arg.generate:
 
-		for key, value in os.environ.items():
-			print('{}: {}'.format(key, value))
+		# All token in the repo
+		#for key, value in os.environ.items():
+		#	print('{}: {}'.format(key, value))
 
 		print(f"Directory Principal {os.environ["GITHUB_WORKSPACE"]}")
-		dirTmp = os.environ["GITHUB_WORKSPACE"]
+		dir_GITHUB_WORKSPACE = os.environ["GITHUB_WORKSPACE"]
+		dirReferentiel = os.path.join(dir_GITHUB_WORKSPACE,"Referentiels")
 
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
 		inputDirectory = Path(arg.input).absolute()
 		#print(f"Directory Parent: {inputDirectory}")
 		
-		for (root,dirs,files) in os.walk(dirTmp):
+		for (root,dirs,files) in os.walk(dirReferentiel):
 			print (root)
 			print (dirs)
 			print (files)
 		print("Directory Global")
-		list_of_files = glob.glob("**/*.rdf",root_dir=dirTmp,recursive=True)
-		print(list_of_files)
-
-		dirRef = os.environ["GaranceRepo"]
-		print(f"Directory Resource {dirRef}")
-		for (root,dirs,files) in os.walk(dirRef):
-			print (root)
-			print (dirs)
-			print (files)
-
-
 		
-
+		list_of_files = glob.glob("**/*.rdf",root_dir=dirReferentiel,recursive=True)
+		print(list_of_files)
+		
 	if 'FRAME' in arg.generate:
 		# Create a Json-LD Frame
 		#asJLd(arg.input,arg.frame,arg.output).frame()
