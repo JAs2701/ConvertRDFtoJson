@@ -19,7 +19,8 @@ if __name__ == "__main__":
 	arg = parser.parse_args()
 	# Generate resources
 	if 'READ' in arg.generate:
-		pathNew = os.environ["GITHUB_ACTOR"]
+		#pathNew = os.environ["GITHUB_ACTOR"]
+		pathNew = os.environ["GITHUB_ACTION_PATH"]
 		print(pathNew)
 		#read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		#read.convert_data_json()
