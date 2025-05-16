@@ -24,6 +24,7 @@ jobs:
           npm ci
    
   Persist_Cache:
+    needs: [Install_dependencies]
     runs-on: ubuntu-latest
     steps:
       - name: Persist npm cache
