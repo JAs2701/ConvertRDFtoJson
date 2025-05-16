@@ -1,0 +1,21 @@
+name: WorkFlow Process
+on: [workflow_dispatch]
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Only
+        run: |
+          echo "Test 1"
+  dependence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        run: |
+          echo "Test 2"
+  fin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        run: |
+          echo "Test 3"    
