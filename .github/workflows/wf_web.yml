@@ -13,8 +13,8 @@ concurrency:
 jobs:
   Install_dependencies: 
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+    steps:      
+      - uses: actions/setup-node@v3
       - name: Setup Node
         id: package_nd
         uses: actions/setup-node@v3
