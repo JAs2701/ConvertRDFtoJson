@@ -8,13 +8,14 @@ jobs:
         run: |
           echo "Test 1"
   dependence:
+    needs: [print]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         run: |
           echo "Test 2"
   fin:
-    needs: [print, dependence]
+    needs: [dependence]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
